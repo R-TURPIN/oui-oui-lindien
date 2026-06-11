@@ -47,7 +47,7 @@ if "strava_token" not in st.session_state:
         # Affichage du bouton de connexion initial
         st.info("Aucune donnée importée. Connecte un compte pour lancer l'analyse.")
         authorize_url = f"https://www.strava.com/oauth/authorize?client_id={CLIENT_ID}&redirect_uri={APP_URL}&response_type=code&scope=activity:read_all"
-        st.markdown(f'<a href="{authorize_url}" target="_self"><button style="background-color: #FC4C02; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔗 Se connecter avec Strava</button></a>', unsafe_allowed_html=True)
+        st.markdown(f'<a href="{authorize_url}" target="_self"><button style="background-color: #FC4C02; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔗 Se connecter avec Strava</button></a>', unsafe_allow_html=True)
 
 # --- TRAITEMENT ET AFFICHAGE DES DONNÉES ---
 if "strava_token" in st.session_state:
